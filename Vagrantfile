@@ -36,6 +36,9 @@ Vagrant::Config.run do |config|
   # folder, and the third is the path on the host to the actual folder.
   # config.vm.share_folder "v-data", "/vagrant_data", "../data"
 
+  # Após retirar do forno
+  config.vm.provision :shell, :inline => "apt-get update --fix-missing"
+
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
   # You will need to create the manifests directory and a manifest in
