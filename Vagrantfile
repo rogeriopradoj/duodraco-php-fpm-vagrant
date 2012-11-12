@@ -38,6 +38,8 @@ Vagrant::Config.run do |config|
 
   # Após retirar do forno
   config.vm.provision :shell, :inline => "apt-get update --fix-missing"
+  # Instala o openssh-server
+  config.vm.provision :shell, :inline => "apt-get install openssh-server"
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
