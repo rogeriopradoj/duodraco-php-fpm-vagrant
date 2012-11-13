@@ -42,6 +42,8 @@ Vagrant::Config.run do |config|
   config.vm.provision :shell, :inline => "apt-get install openssh-server"
   # Instala o avahi-daemon
   config.vm.provision :shell, :inline => "apt-get --yes --force-yes install avahi-daemon"
+  # Reinicia o serviço do avahi-daemon
+  config.vm.provision :shell, :inline => "/etc/init.d/avahi-daemon restart"
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
